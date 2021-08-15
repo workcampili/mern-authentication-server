@@ -5,7 +5,7 @@ const errorHandler = (err, req, res, next) => {
 
     error.message = err.message;
 
-    console.log(err.message)
+
 
 
     if (err.code === 11000) {
@@ -18,7 +18,7 @@ const errorHandler = (err, req, res, next) => {
         error = new ErrorResponse(message, 400);
     }
 
-    console.log(error.message);
+
 
     res.status(error.statusCode || 500).json({
         success: false,
